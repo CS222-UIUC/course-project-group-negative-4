@@ -1,8 +1,11 @@
-on:
+name: Pytest coverage comment
+on: 
   push:
   pull_request:
-  name: Pytest coverage comment
-  uses: MishaKav/pytest-coverage-comment@main
-  with:
-    pytest-coverage-path: ./pytest-coverage.txt
-    junitxml-path: ./pytest.xml
+uses: MishaKav/pytest-coverage-comment@main
+with:
+  pytest-coverage-path: ./pytest-coverage.txt
+  junitxml-path: ./pytest.xml
+
+
+
