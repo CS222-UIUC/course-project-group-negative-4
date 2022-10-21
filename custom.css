@@ -1,3 +1,8 @@
+h2 {
+    color:rgb(233, 227, 222);
+    text-shadow: 2px 2px 2px #373737;
+}
+
 .thumbnail {
     position: relative;
 }
@@ -46,7 +51,10 @@
     background: blue;
 }
 
-h2 {
-    color:rgb(233, 227, 222);
-    text-shadow: 2px 2px 2px #373737;
+img.profile_img{
+    border-radius: 50%;
+}
+
+#hero-image {
+    filter: blur(2px);
 }
