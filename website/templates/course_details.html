@@ -1,3 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Course List{% endblock %}
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-borderless table-sm table-dark border-dark">
+        <thead>
+            <a href="course_details.html">
+                <tr>
+                    <th scope="col">Professor</th>
+                    <th scope="col"># of sections</th>
+                    <th scope="col">Average Grade</th>
+                    <th scope="col">Withdrawals</th>
+                </tr>
+            </a>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Zheng, Reanne</th>
+                <td>2</td>
+                <td>A</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th scope="row">Atienza, Paul Michael L</th>
+                <td>2</td>
+                <td>C+</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <th scope="row">Wang, Yu</th>
+                <td>3</td>
+                <td>A-</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">Gonzalez, Daniel A</th>
+                <td>4</td>
+                <td>B+</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<h1>UIUC Reddit Results</h1>
+<img src="/static/images/reddit_results.png" alt="Reddit Source" />
+
+{% endblock %}
+
 <!doctype html>
 <html lang="en">
 
@@ -25,7 +75,7 @@
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav ms-auto text-center">
                     <li>
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="inde">Home</a>
                     </li>
                     <li>
                         <a class="nav-link" href="course_list.html">Course List</a>
@@ -37,50 +87,7 @@
             </div>
         </nav>
     </div>
-    <div class="table-responsive">
-        <table class="table table-striped table-hover table-borderless table-sm table-dark border-dark">
-            <thead>
-                <a href="course_details.html">
-                    <tr>
-                        <th scope="col">Professor</th>
-                        <th scope="col"># of sections</th>
-                        <th scope="col">Average Grade</th>
-                        <th scope="col">Withdrawals</th>
-                    </tr>
-                </a>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Zheng, Reanne</th>
-                    <td>2</td>
-                    <td>A</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <th scope="row">Atienza, Paul Michael L</th>
-                    <td>2</td>
-                    <td>C+</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <th scope="row">Wang, Yu</th>
-                    <td>3</td>
-                    <td>A-</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <th scope="row">Gonzalez, Daniel A</th>
-                    <td>4</td>
-                    <td>B+</td>
-                    <td>3</td>
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-
-    <h1>UIUC Reddit Results</h1>
-    <img src="images/reddit_results.png" alt="Reddit Source" />
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
