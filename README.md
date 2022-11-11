@@ -1,8 +1,6 @@
-## UIUC Courses and Instructor Data Website
+Bryan Finn, Dherya Jalan, Jaywoo Jo
 
-Bryan Finn
-Dherya Jalan
-Jaywoo Jo
+## UIUC Courses and Instructor Data Website
 
 ### Pitch
 UIUC Course Data is an all in one place to help students make informed decisions
