@@ -1,0 +1,31 @@
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+plt.style.use('fivethirtyeight')
+
+
+
+dev_x = [1, 2, 3, 4, 5]
+dev_y = [100, 200, 300, 400, 500]
+two_y = [200, 300, 400, 500, 600]
+three_y = [150, 250, 350, 450, 550]
+
+x_indexes = np.arange(len(dev_x))
+width = 0.25
+
+plt.bar(x_indexes - width, dev_y, width=width, color="lightblue", label='Hello')
+plt.bar(x_indexes, two_y, width=width, color="lightgreen", label='Hello') #for some reason I can't understand, width=width is needed here even though it doens't use it.
+plt.bar(x_indexes + width, three_y, width=width, color="purple", label='Hello')
+
+plt.xticks(ticks=x_indexes, labels=dev_x)
+
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Helloooo')
+
+#plt.grid()
+
+plt.legend()
+plt.show()
