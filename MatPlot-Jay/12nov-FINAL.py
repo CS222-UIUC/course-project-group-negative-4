@@ -55,10 +55,17 @@ print(df3)
 df = df3.copy()
 #print(df)
 
-my_colors = ['green', 'forestgreen', 'mediumseagreen', 
+""" my_colors = ['green', 'forestgreen', 'mediumseagreen', 
             'skyblue', 'lightskyblue', 'lightblue',
             'indianred', 'salmon', 'lightcoral',
             'wheat', 'moccasin', 'papayawhip',
+            'dimgray', 'lightgray']
+ """
+ 
+my_colors = ['lightgreen', 'mediumseagreen', 'forestgreen', 
+            'lightblue', 'lightskyblue', 'skyblue',
+            'lightcoral', 'salmon', 'indianred',
+            'papayawhip', 'moccasin', 'wheat',
             'dimgray', 'lightgray']
 
 
