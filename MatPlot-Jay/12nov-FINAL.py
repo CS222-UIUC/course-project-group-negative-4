@@ -27,7 +27,7 @@ df3 = df3.groupby('Primary Instructor', as_index=False).sum() #as_index or else 
 
 df3 = df3.sort_values(by = ['A+', 'A', 'A-', 'B+', 'B', 'B-']) #print(df3)
 
-
+print(df3)
 """ Adjust the DF to Sort by Weighted GPA. Remember it's sorted in Lowest to Highest because later the visualization graph plot will reverse it """
 weight_map = {"A+": 4.00, "A": 4.00, "A-": 3.67,
             "B+": 3.33, "B": 3.00, "B-": 2.67,
@@ -36,12 +36,15 @@ weight_map = {"A+": 4.00, "A": 4.00, "A-": 3.67,
             "F": 0}
             
 df3['Weighted Sum'] = df3['A+']*(weight_map['A+']) + df3['A']*(weight_map['A']) + df3['A-']*(weight_map['A-']) + df3['B+']*(weight_map['B+']) + df3['B']*(weight_map['B']) + df3['B-']*(weight_map['B-']) + df3['C+']*(weight_map['C+']) + df3['C']*(weight_map['C']) + df3['C-']*(weight_map['C-']) + df3['D+']*(weight_map['D+']) + df3['D']*(weight_map['D']) + df3['D-']*(weight_map['D-']) + df3['F']*(weight_map['F'])
-df3['Row Sum'] = df3.sum(axis=1)
+#df3['Row Sum'] = df3.sum(axis=1) 
+df3['Row Sum'] = df3['A+'] + df3['A'] + df3['A-'] + df3['B+'] + df3['B'] + df3['B-'] + df3['C+'] + df3['C'] + df3['C-'] + df3['D+'] + df3['D'] + df3['D-'] + df3['F']
 df3['Avg'] = df3['Weighted Sum'] / df3['Row Sum']
+df3['Avg Rounded'] = df3['Avg'].round(2)
+df3['Primary Instructor'] = df3['Primary Instructor'] + '\n' + '(' + df3['Avg Rounded'].astype(str) + ')'
 
 df3 = df3.sort_values(by=['Avg']) #, ascending=False
 print(df3)
-df3 = df3.drop(columns=['Weighted Sum', 'Row Sum', 'Avg'])
+df3 = df3.drop(columns=['Weighted Sum', 'Row Sum', 'Avg', 'Avg Rounded'])
 print(df3)
 
 
@@ -74,7 +77,7 @@ df_rel_copy.plot(
     title = course + str(tag),
     mark_right = True,
     color=my_colors,
-    figsize=(16, 8),
+    figsize=(30, 8),
     xlim=(-2,102))
 
 print(df_rel_copy)
