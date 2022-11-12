@@ -13,8 +13,8 @@ print(old_df)
 
 
 # load dataset
-df = pd.read_csv('Matplot/stat400normal.csv')
-df = pd.read_csv('Matplot/stat400percentageconvert.csv')
+#df = pd.read_csv('MatPlot-Jay/stat400normal.csv')
+df = pd.read_csv('MatPlot-Jay/stat400percentageconvert.csv')
   
 # view dataset
 print(df)
