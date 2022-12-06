@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="row" id="box-search">
+        <div class="thumbnail text-center">
+            <img src="/static/images/icd_hero.jpg" alt="ICD Hero" class="img-responsive" id="hero-image">
+            <div class="caption">
+                <h2>Illini Course Data is the all in one place to help students make informed decisions regarding course selection
+                </h2>
+            </div>
+        </div>
+    </div>
+    <p>ICD provides statistical course data such as past semester grade distributions and reviews from RateMyProfessor and popular Reddit posts. </p>
+    <div class="container">
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+          <div class="search">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control" placeholder="Search course">
+            <button class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
