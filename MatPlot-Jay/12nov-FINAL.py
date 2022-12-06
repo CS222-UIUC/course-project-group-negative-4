@@ -20,15 +20,14 @@ df = pd.read_csv('MatPlot-Jay/uiuc-gpa-dataset-fa19-onwards.csv')
 
 """ Find DF in CSV"""
 df2 = df.loc[(df['Subject'] == course) & (df['Number'] == tag)] #print(df2)
-print("what is thi 1??")
-print(df2)
+#print("what is thi 1??")
+#print(df2)
 df3 = df2.iloc[:,[21,7,8,9,10,11,12,13,14,15,16,17,18,19,20]] 
-print("what is thi??")
-print(df3)
+#print("what is thi??")
+#print(df3)
 
 """ Sum the rows with the same Primary Instructor """
 df3 = df3.groupby('Primary Instructor', as_index=False).sum() #as_index or else the Primary Instructor column name gets weird #print(df3)
-
 df3 = df3.sort_values(by = ['A+', 'A', 'A-', 'B+', 'B', 'B-']) #print(df3)
 
 print(df3)
@@ -48,6 +47,11 @@ df3['Primary Instructor'] = df3['Primary Instructor'] + '\n' + '(' + df3['Avg Ro
 
 df3 = df3.sort_values(by=['Avg']) #, ascending=False
 print(df3)
+
+df_return_instructors_descending = df3.sort_values(by=['Avg'], ascending=False)
+print ("\n HERE \n")
+print (df_return_instructors_descending['Primary Instructor'])
+
 df3 = df3.drop(columns=['Weighted Sum', 'Row Sum', 'Avg', 'Avg Rounded'])
 print(df3)
 
@@ -81,6 +85,7 @@ df_rel_copy.insert(0, "Primary Instructor", df["Primary Instructor"])
 df_rel_copy = df_rel_copy.round(2) #round to 2 decimals
 print(df_rel_copy)
 
+
 df_rel_copy.plot(
     x = ('Primary Instructor'),
     kind = 'barh',
@@ -110,10 +115,15 @@ for n in df_rel:
         
         
 
-#plt.figure(figsize=(20,8)) WHY DOESN'T THIS WORK?
-plt.legend(loc='best', bbox_to_anchor=(0.96, -0.05), ncol=len(df.columns)) #loc='upper left'
+#plt.figure(figsize=(20,8)) #WHY DOESN'T THIS WORK?
+plt.legend(loc='best', bbox_to_anchor=(0.94, -0.06), ncol=len(df.columns)) #loc='upper left' #used to be (0.96, -0.05)
 plt.title(course + " " + str(tag) + " GPA Spread (FA19~FA21)", fontsize=14, pad=15)
 plt.ylabel("Instructors", fontsize=10, labelpad=15)
-plt.show()
-plt.savefig("/Users/jaywoojo/course-project-group-negative-4/Temporary Trash")
 
+plt.subplots_adjust(bottom=0.1, left=0.136, top=0.9, right=0.918)
+
+# plt.subplots_adjust(bottom=0.044, left=0.136, top=0.9, right=0.6)
+
+plt.savefig("/Users/jaywoojo/course-project-group-negative-4/Temporary Trash", bbox_inches='tight')
+
+plt.show()

@@ -48,20 +48,20 @@ def mpl():
 
 @views.route('/course_visualization', methods=("POST", "GET"))
 def course_visualization():
-    
-    
+    """ Dherya's Stuff here copied """
     course = request.form['searched']
     lst = course.split()
     sub = lst[0]
     course_num = int(lst[1])
     int(course_num)
     
+    """ Assigning my variable names below equal to the user input ones from above code """
     course = sub
     tag = course_num
     
     """ Read in CSV """
     #df = pd.read_csv('MatPlot-Jay/fa-2021-only.csv')
-    df = pd.read_csv('website/uiuc-gpa-dataset-fa19-onwards.csv')
+    df = pd.read_csv('website/CSVs/uiuc-gpa-dataset-fa19-onwards.csv')
 
     """ Find DF in CSV"""
     df2 = df.loc[(df['Subject'] == course) & (df['Number'] == tag)] #print(df2)
@@ -73,7 +73,6 @@ def course_visualization():
 
     """ Sum the rows with the same Primary Instructor """
     df3 = df3.groupby('Primary Instructor', as_index=False).sum() #as_index or else the Primary Instructor column name gets weird #print(df3)
-
     df3 = df3.sort_values(by = ['A+', 'A', 'A-', 'B+', 'B', 'B-']) #print(df3)
 
     print(df3)
@@ -95,8 +94,6 @@ def course_visualization():
     print(df3)
     df3 = df3.drop(columns=['Weighted Sum', 'Row Sum', 'Avg', 'Avg Rounded'])
     print(df3)
-
-
 
     """ Now Build Visualization  """
     # load dataset
@@ -153,8 +150,6 @@ def course_visualization():
                 if ((np.round(pc, 1)) > 1.5): #Only if we have space of 1.5, then we'll just add the letter.
                     plt.text(cs - ab / 2, i, n, va = 'center', ha = 'center', fontsize = 4.5) 
             
-            
-
     #plt.figure(figsize=(20,8)) WHY DOESN'T THIS WORK?
     plt.legend(loc='best', bbox_to_anchor=(0.94, -0.06), ncol=len(df.columns)) #loc='upper left'
     plt.title(course + " " + str(tag) + " GPA Spread (FA19~FA21)", fontsize=14, pad=15)
@@ -163,11 +158,13 @@ def course_visualization():
     plt.subplots_adjust(bottom=0.044, left=0.136, top=0.9, right=0.6)
     plt.savefig("website/static/images/MATPLOTIMAGE", bbox_inches='tight')
     
-    plt.show()
+    #plt.show()
     
     output = io.BytesIO()
     #FigureCanvas(fig).print_png(output)
     return redirect(url_for('views.mpl'))
+
+
 
 
 
