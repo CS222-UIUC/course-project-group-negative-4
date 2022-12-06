@@ -11,3 +11,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
 
     return app
+
+
+#source venv/bin/activate  - for activating venv
+#running flask app:  flask --app main run

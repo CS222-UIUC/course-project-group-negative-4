@@ -20,7 +20,11 @@ df = pd.read_csv('MatPlot-Jay/uiuc-gpa-dataset-fa19-onwards.csv')
 
 """ Find DF in CSV"""
 df2 = df.loc[(df['Subject'] == course) & (df['Number'] == tag)] #print(df2)
-df3 = df2.iloc[:,[21,7,8,9,10,11,12,13,14,15,16,17,18,19,20]] #print(df3)
+print("what is thi 1??")
+print(df2)
+df3 = df2.iloc[:,[21,7,8,9,10,11,12,13,14,15,16,17,18,19,20]] 
+print("what is thi??")
+print(df3)
 
 """ Sum the rows with the same Primary Instructor """
 df3 = df3.groupby('Primary Instructor', as_index=False).sum() #as_index or else the Primary Instructor column name gets weird #print(df3)
@@ -110,6 +114,6 @@ for n in df_rel:
 plt.legend(loc='best', bbox_to_anchor=(0.96, -0.05), ncol=len(df.columns)) #loc='upper left'
 plt.title(course + " " + str(tag) + " GPA Spread (FA19~FA21)", fontsize=14, pad=15)
 plt.ylabel("Instructors", fontsize=10, labelpad=15)
-  
 plt.show()
+plt.savefig("/Users/jaywoojo/course-project-group-negative-4/Temporary Trash")
 
