@@ -2,17 +2,31 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+  <div id="homepage">
+    <!-- Title -->
+    <div>
+      <h1 id="homepage-title"> Illini Course Data </h1>
+    </div>
+
+    <!-- Line Break Bar -->
+    <hr/>
+
+    <!-- Text below Title -->
+    <div id="homepage-title-body">
+        <h1 style="line-height: 25px; padding-left: 60px; padding-right: 60px; "> An all in one place to help UIUC students make informed decisions regarding course selection. Provides specific semester grade distributions for a given course, as well as quick access to RateMyProfessor and popular Reddit posts. </h1>
+        <!-- <h1 style="padding-left: 30px; padding-right: 30px;" > An all in one place to help UIUC students make informed decisions regarding course selection. </h1> -->
+        <!-- <h1 style="margin-top: 15px; padding-left: 30px; padding-right: 30px; line-height: 20px; "> Provides specific semester grade distributions for a given course, as well as quick access to RateMyProfessor and popular Reddit posts. </h1> -->
+    </div>
+
+    <!-- Image -->
     <div class="row" id="box-search">
         <div class="thumbnail text-center">
-            <img src="/static/images/icd_hero.jpg" alt="ICD Hero" class="img-responsive" id="hero-image">
-            <div class="caption">
-                <h2>Illini Course Data is the all in one place to help students make informed decisions regarding course selection
-                </h2>
-            </div>
+            <img src="/static/images/cs-173-grey-f8f9fa-background.png" alt="ICD Hero" class="img-responsive" id="cs173-image">
         </div>
     </div>
-    <p>ICD provides statistical course data such as past semester grade distributions and reviews from RateMyProfessor and popular Reddit posts. </p>
-    <div class="container">
+
+    <!-- Search Bar -->
+    <div>
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-8">
           <div class="search">
@@ -25,4 +39,17 @@
         </div>
       </div>
     </div>
+
+    
+    <!-- Text below Search Bar -->
+    <div id="text-below-search-bar">
+      <ul style="padding-left: 60px; padding-right: 60px; font-size: 16px;"> 
+        <li> Users can look up a course code (e.g. CS 173) to view what professors have taught the class in the past. </li>
+        <li>   Users will have access to grade disparity (the number of A+’s/A’s/A-’s, etc.) from past semesters between the sections of different professors. </li>
+        <li>  Users will be able to view professor reviews embedded directly from RateMyProfessors.com </li>
+        <li>  Users will be able to view Reddit data relating to top posts on UIUC subreddit relating to a specific course or professor. </li>
+      </ul>
+    </div>
+
+  </div>
 {% endblock %}
