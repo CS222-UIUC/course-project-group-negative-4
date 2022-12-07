@@ -2,6 +2,16 @@
 {% block title %}Plot{% endblock %}
 {% block content %}
     <div style="margin-top: 30px; margin-left: 0px; margin-right: 0px;text-align: center;">
-        <img src="static/images/MATPLOTIMAGE.png" alt="Course Analysis" style="width: 80%; height: auto;" >
+        <img src="../static/images/MATPLOTIMAGE.png" alt="Course Analysis" style="width: 80%; height: auto;" >
+    </div>
+
+    <div style="margin-top: 50px; margin-left: 0px; margin-right: 0px; text-align: center;">
+        <h2>Rate My Professor Results</h2>
+    </div>
+    
+    <div style="margin-top: 30px; margin-left: 0px; margin-right: 0px; text-align: center; width: 80%; margin: auto;">
+        <div>
+            {{Professors|safe}}
+        </div>
     </div>
 {% endblock %}

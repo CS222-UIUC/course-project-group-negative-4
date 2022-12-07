@@ -9,6 +9,12 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+import sys
+sys.path.append("..")
+from MatPlot.RMP import RMP
+
+
+
 #from jaymatplotlibfinal import *
 import numpy as np
 
@@ -41,10 +47,10 @@ def course_list():
 
 
 #Matplotlib page
-@views.route('/matplot', methods=("POST", "GET"))
-def mpl():
+@views.route('/matplot/<string:_course>+<int:_tag>', methods=("POST", "GET"))
+def mpl(_course, _tag):
     return render_template('matplot.html',
-                           PageTitle = "Matplotlib")
+                           PageTitle = "Matplotlib", Professors = RMP.getRMPTable(_course, _tag))
 
 @views.route('/course_visualization', methods=("POST", "GET"))
 def course_visualization():
@@ -162,7 +168,7 @@ def course_visualization():
     
     output = io.BytesIO()
     #FigureCanvas(fig).print_png(output)
-    return redirect(url_for('views.mpl'))
+    return redirect(url_for('views.mpl', _course = course, _tag = tag))
 
 
 

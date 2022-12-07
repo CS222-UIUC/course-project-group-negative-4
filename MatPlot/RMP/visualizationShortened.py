@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def visualization_shortened():
+def visualization_shortened(course="CS", tag=173):
     """ Input Simulation """
     #course, tag = input("Enter Course and Tag (ex.: CS 173): ").split()
     #print("Course: ", course)
@@ -11,14 +11,14 @@ def visualization_shortened():
     #tag = int(tag) 
 
     """ Manually put it for now """
-    course = "CS"
-    tag = 173
+    #course = "CS"
+    #tag = 173
     tag = int(tag)
 
 
     """ Read in CSV """
     #df = pd.read_csv('MatPlot-Jay/fa-2021-only.csv')
-    df = pd.read_csv('MatPlot-Jay/uiuc-gpa-dataset-fa19-onwards.csv')
+    df = pd.read_csv('MatPlot/uiuc-gpa-dataset-fa19-onwards.csv')
 
     """ Find DF in CSV"""
     df2 = df.loc[(df['Subject'] == course) & (df['Number'] == tag)] #print(df2)

@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import visualizationShortened
+from .visualizationShortened import visualization_shortened
+#import visualizationShortened
 
 #course, tag = input("Enter Course and Tag (ex.: CS 173): ").split()
 #print("Course: ", course)
@@ -18,15 +19,14 @@ import visualizationShortened
 """ Warning! CSV file contains duplicates for certain professors. When I've checked manually, most professors with duplicate rows are the same. 
     But some, are different. Oh well. My code just takes the first row that shows up when there are duplicates. I make sure to check firstName and
     lastName so you don't avoid removing a name when there's a 'Chang, Kevin' and a 'Wise, Kevin' """
-df = pd.read_csv('MatPlot-Jay/RMP/rmp-data-updated.csv') 
+df = pd.read_csv('MatPlot/RMP/rmp-data-updated.csv') 
 
 
 
 """ Function to return list of professor names like so [['Park', 'Yongjoo'], ['Chang', 'Kevin'], ['Alawini', 'Abdussalam']] """
-def rmp():
-
+def rmp(course="CS",tag=173):
     #profs_df = pd.DataFrame({'Primary Instructor': ['Park, Yongjoo\n(3.27)', 'Chang, Kevin C\n(3.27)', 'Alawini, Abdussalam A\n(3.27)']})
-    profs_df = visualizationShortened.visualization_shortened()
+    profs_df = visualization_shortened(course,tag)   
     #profs_df = visualizationShortened.visualization_shortened()
     #print(profs_df)    
 
@@ -45,8 +45,8 @@ def rmp():
     #!!! Cut out \nGPA here
     flat_list = [item.split('\n')[0] for item in flat_list]
         #print(flat_list)
-    print("\n PROFS 2 \n")
-    print(flat_list)
+    #print("\n PROFS 2 \n")
+    #print(flat_list)
 
     #Convert to ['Park, Yongjoo', 'Chang, Kevin C', 'Alawini, Abdussalam A'] --> [['Park', 'Yongjoo'], ['Chang', 'Kevin C'], ['Alawini', 'Abdussalam A']]
     split_val = [item.split(', ') for item in flat_list]
@@ -62,11 +62,11 @@ def rmp():
 
 
 """ Funcion to calls rmp() above, where we turn [['Park', 'Yongjoo'], ['Chang', 'Kevin'], ['Alawini', 'Abdussalam']] into a dataframe {tFname,tLname, tid,overall_rating} """
-def iloc():
+def iloc(course="CS",tag=173):
     """ Create empty_df so I can add rows in the for loop """
     empty_df = pd.DataFrame(columns=['tDept', 'tSid', 'institution_name', 'tFname',	'tMiddlename', 'tLname', 'tid',	'tNumRatings',	'rating_class', 'contentType', 'categoryType', 'overall_rating']) #empty dataframe
     
-    prof_list = rmp()
+    prof_list = rmp(course, tag)
     for names in prof_list:
             lastName = names[0]
             firstName = names[1]
@@ -78,6 +78,7 @@ def iloc():
     
     """ Cut out useless columns """
     iloc_df = empty_df.iloc[:,[3,5,6,11]] 
+    #print(iloc_df)
     
     """ Get rid of duplicate entries and keep the first one """
     final_df = iloc_df.drop_duplicates(subset=['tFname', 'tLname'], keep='first')
@@ -85,12 +86,12 @@ def iloc():
     base_link = 'https://www.ratemyprofessors.com/ShowRatings.jsp?tid='
     final_df['Link'] = base_link + final_df['tid'].astype(str)
      
-    #final_df.rename(columns={'tFname': 'FirstName', 'tLname': 'LastName', 'overall_rating': 'Rating'})
+    final_df.rename(columns={'tFname': 'FirstName', 'tLname': 'LastName', 'overall_rating': 'Rating'}, inplace=True)
     return final_df
 
-print(iloc())
-        
-result = iloc().to_html()
-print(result)
+#print(iloc())
+def getRMPTable(course="CS", tag=173):
+    return iloc(course, tag).to_html(classes='table table-stripped',render_links=True,justify='center', index=False, columns={'FirstName', 'LastName', 'Rating', 'Link'})
+#print(result)
         
         
