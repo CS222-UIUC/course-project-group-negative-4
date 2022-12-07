@@ -15,9 +15,11 @@
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-8">
           <div class="search">
-            <i class="fa fa-search"></i>
-            <input type="text" class="form-control" placeholder="Search course">
-            <button class="btn btn-primary">Search</button>
+            <form method = "POST" action = "{{ url_for('views.course_visualization') }}"> 
+              <input type="text" class="form-control" placeholder="Get statistical data for your course!" name = "searched">
+              <button class="btn btn-primary">Search</button> 
+            </form>
+            <!-- <i class="fa fa-search"></i> -->
           </div>
         </div>
       </div>
