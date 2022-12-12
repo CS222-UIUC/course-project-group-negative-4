@@ -27,7 +27,7 @@ taught the class in the past.
 ### Technical Architecture
 insert explanation
 
-![Technical Architecture Image](/README-images/CS222-Framework.jpeg)
+![Technical Architecture Image](https://github.com/CS222-UIUC/course-project-group-negative-4/blob/main/README-Images/CS222-Framework.jpeg)
 
 ### Development
 Best to create a [python virtual environment](https://phoenixnap.com/kb/install-flask#ftoc-heading-6). 
