@@ -26,29 +26,33 @@ taught the class in the past.
 
 ### Technical Architecture Diagram and Explanation
 
-Frontend:  
-Navigation Bar: Allows users to navigate the website with ease (HTML, CSS, Bootstrap)  
-Search Bar: Allows the users to search for any course they're interested in (HTML, CSS, Bootstrap; Jinja, Flask)  
-Dynamic HTML Tables: Generates HTML tables for MP and Reddit results based on user queries  (HTML, Pandas, Python; Jinja, Flask)  
-Data Visualization: Allow users to easilv understand the GPA distribution and breakdown for course (MatplotLib, Pandas, Python; Flask, HTML)
+**Frontend:**  
+*Navigation Bar:* Allows users to navigate the website with ease (HTML, CSS, Bootstrap)  
+*Search Bar:* Allows the users to search for any course they're interested in (HTML, CSS, Bootstrap; Jinja, Flask)  
+*Dynamic HTML Tables:* Generates HTML tables for MP and Reddit results based on user queries  (HTML, Pandas, Python; Jinja, Flask)  
+*Data Visualization:* Allow users to easilv understand the GPA distribution and breakdown for course (MatplotLib, Pandas, Python; Flask, HTML)
 
-Backend:
-MatplotLib: Used to generate and save data visualizations
-Flask: Primary language used for the logic of the application
-CSV/Pandas instead of SQL: Our data was light enough that a SQL database was not necessary. We used pandas dataframes to manipulate GPA & RMP CSV files easily.
-Miscellaneous
-Jinja: Templating engine so we can integrate results from the backend functions onto the frontend
+**Backend:**  
+*MatplotLib:* Used to generate and save data visualizations  
+*Flask:* Primary language used for the logic of the application  
+*CSV/Pandas instead of SQL:* Our data was light enough that a SQL database was not necessary. We used pandas dataframes to manipulate GPA & RMP CSV files easily.   
+
+**Miscellaneous**   
+*Jinja:* Templating engine so we can integrate results from the backend functions onto the frontend  
 
 
 ![Technical Architecture Image](https://github.com/CS222-UIUC/course-project-group-negative-4/blob/main/README-Images/CS222-Framework.jpeg)
 
 ### Development
+
+Clone the repository (see this [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) for help)  
+
 Best to create a [python virtual environment](https://phoenixnap.com/kb/install-flask#ftoc-heading-6). 
-Activate the environment by running ```<name of environment>/bin/activate```. If issues arise, write ```source <name of environment>/bin/activate```.
+Activate the environment by running ```<name of environment>/bin/activate```. If issues arise, write ```source <name of environment>/bin/activate```.  
 
-After activating virtual env, to install dependencies, run ```pip install -r requirements.txt```.
+After activating and entering virtual env, to install dependencies run ```pip install -r requirements.txt```.  
 
-Open the file 'main.py' on your IDE (i.e. VS Code) and press run. Flask should then provide you with a link to run the application, such as "http://127.0.0.1:5000", which you can open in your browser.
+Open the file 'main.py' on your IDE (i.e. VS Code) and press run. Flask should then provide you with a link to run the application, such as "http://127.0.0.1:5000", which you can open in your browser.  
 
 ### Group Members and Roles
 **Bryan Finn:** Frontend and initial application template design (HTML/CSS/Bootstrap/Flask); RMP & Reddit backend integration (Flask).  
