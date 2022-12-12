@@ -18,9 +18,9 @@ taught the class in the past.
      <td> Ex. search, STAT 400 p.2</td>
   </tr>
   <tr>
-    <td valign="top"><img src="/Users/jaywoojo/course-project-group-negative-4/README-Images/1.png"></td>
-    <td valign="top"><img src="/Users/jaywoojo/course-project-group-negative-4/README-Images/2.png"></td>
-    <td valign="top"><img src="/Users/jaywoojo/course-project-group-negative-4/README-Images/3.png"></td>
+    <td valign="top"><img src="https://github.com/CS222-UIUC/course-project-group-negative-4/blob/main/README-Images/1.png"></td>
+    <td valign="top"><img src="https://github.com/CS222-UIUC/course-project-group-negative-4/blob/main/README-Images/2.png"></td>
+    <td valign="top"><img src="https://github.com/CS222-UIUC/course-project-group-negative-4/blob/main/README-Images/3.png"></td>
   </tr>
  </table>
 
