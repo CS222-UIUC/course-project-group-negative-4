@@ -24,8 +24,21 @@ taught the class in the past.
   </tr>
  </table>
 
-### Technical Architecture
-insert explanation
+### Technical Architecture Diagram and Explanation
+
+Frontend:  
+Navigation Bar: Allows users to navigate the website with ease (HTML, CSS, Bootstrap)  
+Search Bar: Allows the users to search for any course they're interested in (HTML, CSS, Bootstrap; Jinja, Flask)  
+Dynamic HTML Tables: Generates HTML tables for MP and Reddit results based on user queries  (HTML, Pandas, Python; Jinja, Flask)  
+Data Visualization: Allow users to easilv understand the GPA distribution and breakdown for course (MatplotLib, Pandas, Python; Flask, HTML)
+
+Backend:
+MatplotLib: Used to generate and save data visualizations
+Flask: Primary language used for the logic of the application
+CSV/Pandas instead of SQL: Our data was light enough that a SQL database was not necessary. We used pandas dataframes to manipulate GPA & RMP CSV files easily.
+Miscellaneous
+Jinja: Templating engine so we can integrate results from the backend functions onto the frontend
+
 
 ![Technical Architecture Image](https://github.com/CS222-UIUC/course-project-group-negative-4/blob/main/README-Images/CS222-Framework.jpeg)
 
