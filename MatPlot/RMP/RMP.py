@@ -95,7 +95,7 @@ def getRMPTable(course="CS", tag=173):
     return iloc(course, tag).to_html(classes='table table-stripped',render_links=True,justify='center', index=False)
 #print(result)
         
-print(getRMPTable())
+#print(getRMPTable())
         
 """ Reddit Stuff"""
 

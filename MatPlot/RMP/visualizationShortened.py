@@ -128,4 +128,4 @@ def visualization_shortened(course="CS", tag=173):
     #plt.show()
     
 
-print(visualization_shortened())
+#print(visualization_shortened())
