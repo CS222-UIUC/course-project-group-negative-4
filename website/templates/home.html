@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div id="homepage">
+    <!-- Title -->
+    <div>
+      <h1 id="homepage-title"> Illini Course Data </h1>
+    </div>
+
+    <div style="margin-top: 0px;">
+      <p style="color: #636366; font-size: 10px; text-align: center; margin-top: 0px; margin-bottom: 5px; "> Equally built by Jaywoo Jo, Bryan Finn, Dherya Jalan </p>
+    </div>
+
+    <!-- Line Break Bar -->
+    <hr/>
+
+    <!-- Text below Title -->
+    <div id="homepage-title-body">
+        <h1 style="line-height: 25px; padding-left: 60px; padding-right: 60px; margin-bottom: 0px;"> An all in one place to help UIUC students make informed decisions regarding course selection. Provides specific semester grade distributions for a given course, as well as quick access to RateMyProfessor and popular Reddit posts. </h1>
+    </div>
+
+    <!-- Image -->
+    <div class="row" id="box-search">
+        <div class="thumbnail text-center">
+            <img src="/static/images/cs-173-grey-f8f9fa-background.png" alt="ICD Hero" class="img-responsive" id="cs173-image">
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div>
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+          <div class="search">
+            <form method = "POST" action = "{{ url_for('views.course_visualization') }}"> 
+              <input type="text" class="form-control" placeholder="Get statistical data for your course!" name = "searched">
+              <button class="btn btn-primary">Search</button> 
+            </form>
+            <!-- <i class="fa fa-search"></i> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Text below Search Bar -->
+    <div id="text-below-search-bar">
+      <ul style="padding-left: 60px; padding-right: 60px; font-size: 16px;"> 
+        <li> Users can look up a course code (e.g. CS 173) to view what professors have taught the class in the past. </li>
+        <li>   Users will have access to grade disparity (the number of A+’s/A’s/A-’s, etc.) from past semesters between the sections of different professors. </li>
+        <li>  Users will be able to view professor reviews embedded directly from RateMyProfessors.com </li>
+        <li>  Users will be able to view Reddit data relating to top posts on UIUC subreddit relating to a specific course or professor. </li>
+      </ul>
+    </div>
+
+
+  </div>
+{% endblock %}

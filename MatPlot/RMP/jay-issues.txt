@@ -1,0 +1,12 @@
+ PROFS 1 
+
+['Ludden, Ian G\n(3.59)', 'Lin, Patrick\n(3.39)', 'Fleck, Margaret M\n(3.27)', 'Viswanathan, Mahesh\n(3.27)', 'Zhou, Qian\n(3.13)', 'Evans, Graham C\n(3.13)', 'Cosman, Benjamin L\n(3.05)', 'Parthasarathy, Madhusudan\n(2.77)']
+
+ PROFS 2 
+
+[['Park, Yongjoo\n(3.27)'], ['Chang, Kevin C\n(3.27)'], ['Alawini, Abdussalam A\n(3.27)']]
+/Users/jaywoojo/course-project-group-negative-4/MatPlot-Jay/RMP/RMP.py:75: SettingWithCopyWarning: 
+
+
+Cannot for the life of me figure out why when I create a dataframe manually (Profs 2) and turn it into a list, it become a list of lists,
+but when I returned the dataframe from a function and then turned it into a list, it was just a list (Profs 1)
