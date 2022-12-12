@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from .visualizationShortened import visualization_shortened
+from visualizationShortened import visualization_shortened
 #import visualizationShortened
 
 #course, tag = input("Enter Course and Tag (ex.: CS 173): ").split()
@@ -20,7 +20,6 @@ from .visualizationShortened import visualization_shortened
     But some, are different. Oh well. My code just takes the first row that shows up when there are duplicates. I make sure to check firstName and
     lastName so you don't avoid removing a name when there's a 'Chang, Kevin' and a 'Wise, Kevin' """
 df = pd.read_csv('MatPlot/RMP/rmp-data-updated.csv') 
-
 
 
 """ Function to return list of professor names like so [['Park', 'Yongjoo'], ['Chang', 'Kevin'], ['Alawini', 'Abdussalam']] """
@@ -86,12 +85,35 @@ def iloc(course="CS",tag=173):
     base_link = 'https://www.ratemyprofessors.com/ShowRatings.jsp?tid='
     final_df['Link'] = base_link + final_df['tid'].astype(str)
      
+    final_df.drop('tid', axis=1, inplace=True)
     final_df.rename(columns={'tFname': 'FirstName', 'tLname': 'LastName', 'overall_rating': 'Rating'}, inplace=True)
+    #print(final_df)
     return final_df
 
 #print(iloc())
 def getRMPTable(course="CS", tag=173):
-    return iloc(course, tag).to_html(classes='table table-stripped',render_links=True,justify='center', index=False, columns={'FirstName', 'LastName', 'Rating', 'Link'})
+    return iloc(course, tag).to_html(classes='table table-stripped',render_links=True,justify='center', index=False)
 #print(result)
         
+print(getRMPTable())
         
+""" Reddit Stuff"""
+
+def reddit(course="CS",tag=173):
+
+    """ First one is for with space, second is without space. So 'STAT 410' vs. 'STAT410' """
+    reddit_link_str_1 = "https://www.reddit.com/r/UIUC/search/?q=" + course + "%20" + str(tag) + "&restrict_sr=1&sr_nsfw="
+    reddit_link_str_2 = "https://www.reddit.com/r/UIUC/search/?q=" + course + str(tag) + "&restrict_sr=1&sr_nsfw="
+    
+    str_1 = course + " " + str(tag)
+    str_2 = course + str(tag)
+
+    data = [[str_1, reddit_link_str_1], [str_2, reddit_link_str_2]]
+
+    reddit_df = pd.DataFrame(data, columns=['Searched Query', 'Reddit Link'])
+    
+    return reddit_df.to_html(classes='table table-stripped',render_links=True,justify='center', index=False)
+
+
+#print(reddit("STAT", 410))
+

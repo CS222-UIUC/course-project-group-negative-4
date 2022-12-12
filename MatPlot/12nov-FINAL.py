@@ -16,7 +16,7 @@ tag = 173"""
 
 """ Read in CSV """
 #df = pd.read_csv('MatPlot-Jay/fa-2021-only.csv')
-df = pd.read_csv('MatPlot-Jay/uiuc-gpa-dataset-fa19-onwards.csv')
+df = pd.read_csv('MatPlot/uiuc-gpa-dataset-fa19-onwards.csv')
 
 """ Find DF in CSV"""
 df2 = df.loc[(df['Subject'] == course) & (df['Number'] == tag)] #print(df2)
@@ -95,6 +95,8 @@ df_rel_copy.plot(
     color=my_colors,
     figsize=(30, 8),
     xlim=(-2,102))
+
+
 
 print(df_rel_copy)
 

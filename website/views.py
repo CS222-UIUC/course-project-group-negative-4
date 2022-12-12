@@ -9,10 +9,16 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+""" Bryan's method
 import sys
 sys.path.append("..")
 from MatPlot.RMP import RMP
+"""
 
+""" My method to figure out why flask run doesn't work """
+import sys
+sys.path.append("./MatPlot/RMP")
+import RMP
 
 
 #from jaymatplotlibfinal import *
@@ -50,7 +56,7 @@ def course_list():
 @views.route('/matplot/<string:_course>+<int:_tag>', methods=("POST", "GET"))
 def mpl(_course, _tag):
     return render_template('matplot.html',
-                           PageTitle = "Matplotlib", Professors = RMP.getRMPTable(_course, _tag))
+                           PageTitle = "Matplotlib", Professors = RMP.getRMPTable(_course, _tag), Reddit = RMP.reddit(_course, _tag))
 
 @views.route('/course_visualization', methods=("POST", "GET"))
 def course_visualization():

@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 {% block title %}Plot{% endblock %}
 {% block content %}
+
+    <div style="margin-top: 50px; margin-left: 0px; margin-right: 0px; text-align: center;" >
+        <h2 class = "YO" style = "font-weight: ; font-size: 20px; font-weight: 400; text-align: center;"> Grade Distribution </h2>
+        
+        <hr style = "border: 0;
+        border-top: 3px solid;
+        width: 10%;
+        margin: auto; margin-bottom: 15px; ">
+    </div>
+
     <div style="margin-top: 30px; margin-left: 0px; margin-right: 0px;text-align: center;">
         <img src="../static/images/MATPLOTIMAGE.png" alt="Course Analysis" style="width: 80%; height: auto;" >
     </div>
 
-    <div style="margin-top: 50px; margin-left: 0px; margin-right: 0px; text-align: center;">
-        <h2>Rate My Professor Results</h2>
+    <div style="margin-top: 50px; margin-left: 0px; margin-right: 0px; text-align: center;" >
+        <h2 class = "YO" style = "font-weight: ; font-size: 15px; font-weight: 400; text-align: center;"> Rate My Professor Results</h2>
+        
+        <hr style = "border: 0;
+        border-top: 3px solid;
+        width: 10%;
+        margin: auto; margin-bottom: 15px; ">
     </div>
     
     <div style="margin-top: 30px; margin-left: 0px; margin-right: 0px; text-align: center; width: 80%; margin: auto;">
@@ -14,4 +29,23 @@
             {{Professors|safe}}
         </div>
     </div>
+
+
+    <div style="margin-top: 50px; margin-left: 0px; margin-right: 0px; text-align: center;" >
+        <h2 class = "YO" style = "font-weight: ; font-size: 15px; font-weight: 400; text-align: center;"> Reddit Results </h2>
+        
+        <hr style = "border: 0;
+        border-top: 3px solid;
+        width: 10%;
+        margin: auto; margin-bottom: 15px; ">
+    </div>
+    
+    <div style="margin-top: 30px; margin-left: 0px; margin-right: 0px; text-align: center; width: 80%; margin: auto;">
+        <div>
+            {{Reddit|safe}}
+        </div>
+    </div>
+
+    <p class = "hi"> HEY </p>
+
 {% endblock %}
