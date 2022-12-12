@@ -38,6 +38,6 @@ After activating virtual env, to install dependencies, run ```pip install -r req
 Open the file 'main.py' on your IDE (i.e. VS Code) and press run. Flask should then provide you with a link to run the application, such as "http://127.0.0.1:5000", which you can open in your browser.
 
 ### Group Members and Roles
-Bryan Finn: Frontend, initial website template & logo design (HTML/CSS/Bootstrap); RMP & Reddit backend integration (Flask).  
-Dherya Jalan: Backend integration for GPA visualization (Flask); Visualization creation (Matplotlib).  
-Jaywoo Jo: Frontend and UI/UX design (HTML/CSS); Data manipulation for GPA/RMP CSV files (Pandas); Visualization creation and image adjustment for website integration(Matplotlib).  
+**Bryan Finn:** Frontend, initial website template, and logo design (HTML/CSS/Bootstrap); RMP & Reddit backend integration (Flask).  
+**Dherya Jalan:** Backend integration for GPA visualization (Flask); Visualization creation (Matplotlib).  
+**Jaywoo Jo:** Frontend and UI/UX design (HTML/CSS); Data manipulation using GPA & RMP CSV files (Pandas); Visualization creation and image adjustment for website integration (Matplotlib).  
